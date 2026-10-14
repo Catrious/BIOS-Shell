@@ -61,11 +61,14 @@ ex:
     call eq
     jc d_dte
 
+    mov di, c_cpu
+    call eq
+    jc d_cpu
+
     mov di, c_ext
     call eq
     jc d_ext
 
-    call pr
     mov si, err_m
     jmp pr_l
 
@@ -110,7 +113,7 @@ d_mem:
     jmp pr_l
 
 cs_fn:
-    mov ax, 0x0003
+    mov ax, 3
     int 0x10
     jmp ml
 
@@ -119,7 +122,7 @@ d_ech:
     jmp pr_l
 
 d_dte:
-    mov ah, 0x04
+    mov ah, 4
     int 0x1a
     mov al, dl
     call pb
@@ -133,22 +136,17 @@ d_dte:
     call pb
     mov al, cl
     call pb
-    mov al, ' '
-    call pc
-    call pc
-    mov ah, 0x02
-    int 0x1a
-    mov al, ch
-    call pb
-    mov al, ':'
-    call pc
-    mov al, cl
-    call pb
-    mov al, ':'
-    call pc
-    mov al, dh
-    call pb
     jmp pr_n
+
+d_cpu:
+    xor eax, eax
+    cpuid
+    mov si, buf
+    mov [si], ebx
+    mov [si+4], edx
+    mov [si+8], ecx
+    mov byte [si+12], 0
+    jmp pr_l
 
 d_ext:
     db 0xEA
@@ -226,16 +224,17 @@ ncmp:
     ret
 
 nl    db 13, 10, 0
-err_m db ' err', 13, 10, 0
+err_m db 'err', 13, 10, 0
 bs_str db 8, ' ', 8, 0
 c_hlp db 'help', 0
 c_cls db 'cls', 0
 c_mem db 'mem', 0
 c_ech db 'echo ', 0
 c_dte db 'date', 0
+c_cpu db 'cpu', 0
 c_ext db 'exit', 0
-h_txt db 'help,cls,mem,echo,date,exit', 13, 10, 0
-mb_msg db ' MB', 0
+h_txt db 'help,cls,mem,echo,date,cpu,exit', 13, 10, 0
+mb_msg db 'M', 0
 
 times 446-($-$$) db 0
 
