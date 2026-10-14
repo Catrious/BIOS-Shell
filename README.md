@@ -20,5 +20,7 @@ shows free megabytes on the RAM
 prints a message
 <li>date</li>
 shows the date
+<li>cpu</li>
+prints the CPU vendor
 <li>exit</li>
 exits the shell
