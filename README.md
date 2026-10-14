@@ -11,16 +11,16 @@ WARNING: If you want to compile it from scratch, use NASM. (other assemblers lik
 6. Select your USB drive
 ## Commands
 <li>help</li>
-lists all commands
+Lists all commands
 <li>cls</li>
-clears the console
+Clears the console
 <li>mem</li>
-shows free megabytes on the RAM
+Shows free megabytes on the RAM
 <li>echo</li>
-prints a message
+Prints a message
 <li>date</li>
-shows the date
+Prints the date
 <li>cpu</li>
-prints the CPU vendor
+Prints the CPU vendor
 <li>exit</li>
-exits the shell
+Exits the shell
