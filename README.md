@@ -15,12 +15,12 @@ Lists all commands
 <li>cls</li>
 Clears the console
 <li>mem</li>
-Shows free megabytes on the RAM
+Shows free megabytes on the RAM (eg. 128M)
 <li>echo</li>
 Prints a message
 <li>date</li>
-Prints the date
+Prints the date (eg. 20.10.2026)
 <li>cpu</li>
-Prints the CPU vendor
+Prints the CPU vendor (eg. GenuineIntel)
 <li>exit</li>
 Exits the shell
