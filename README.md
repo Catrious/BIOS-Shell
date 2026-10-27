@@ -14,7 +14,7 @@ WARNING: If you want to compile it from scratch, use NASM. (other assemblers lik
 Lists all commands
 <li>cls</li>
 Clears the console
-<li>mem</li>
+<li>ram</li>
 Shows free megabytes on the RAM (eg. 128M)
 <li>echo</li>
 Prints a message
