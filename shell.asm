@@ -224,7 +224,7 @@ ncmp:
     ret
 
 nl    db 13, 10, 0
-err_m db 'err', 13, 10, 0
+err_m db 'Err', 13, 10, 0
 bs_str db 8, ' ', 8, 0
 c_hlp db 'help', 0
 c_cls db 'cls', 0
