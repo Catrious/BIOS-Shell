@@ -55,6 +55,10 @@ ex:
     call eq
     jc d_mem
 
+    mov di, c_cls
+    call eq
+    jc cs_fn
+
     mov di, c_dte
     call eq
     jc d_dte
@@ -214,16 +218,17 @@ eq:
     ret
 
 nl    db 13, 10, 0
-err_m db 'Err', 13, 10, 0
+err_m db 'X', 13, 10, 0
 mb_msg db 'M', 0
 bs_str db 8, ' ', 8, 0
 c_hlp db 'help', 0
 c_gpu db 'gpu', 0
 c_ram db 'ram', 0
+c_cls db 'cls', 0
 c_dte db 'date', 0
 c_cpu db 'cpu', 0
 c_ext db 'exit', 0
-h_txt db 'help,gpu,ram,date,cpu,exit', 13, 10, 0
+h_txt db 'help,gpu,ram,cls,date,cpu,exit', 13, 10, 0
 
 times 446-($-$$) db 0
 
