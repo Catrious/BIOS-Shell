@@ -12,15 +12,13 @@ WARNING: If you want to compile it from scratch, use NASM. (other assemblers lik
 ## Commands
 <li>help</li>
 Lists all commands
-<li>cls</li>
-Clears the console
 <li>ram</li>
-Shows free megabytes on the RAM (eg. 128M)
-<li>echo</li>
-Prints a message
+Shows free megabytes on the RAM
 <li>date</li>
-Prints the date (eg. 20.10.2026)
+Prints the date
 <li>cpu</li>
-Prints the CPU vendor (eg. GenuineIntel)
+Prints the CPU vendor
+<li>gpu</li>
+Prints the GPU name or VBE manufacturer
 <li>exit</li>
 Exits the shell
